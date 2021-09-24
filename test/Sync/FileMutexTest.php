@@ -2,11 +2,11 @@
 
 namespace Amp\File\Test\Sync;
 
-use Amp\File\Sync\AsyncFileMutex;
+use Amp\File\Sync\FileMutex;
 use Amp\Sync\Mutex;
 use Amp\Sync\Test\AbstractMutexTest;
 
-final class AsyncFileMutexTest extends AbstractMutexTest
+final class FileMutexTest extends AbstractMutexTest
 {
     public function setUp(): void
     {
@@ -17,6 +17,6 @@ final class AsyncFileMutexTest extends AbstractMutexTest
 
     public function createMutex(): Mutex
     {
-        return new AsyncFileMutex(\tempnam(\sys_get_temp_dir(), 'mutex-') . '.lock');
+        return new FileMutex(\tempnam(\sys_get_temp_dir(), 'mutex-') . '.lock');
     }
 }

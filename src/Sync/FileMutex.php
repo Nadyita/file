@@ -10,7 +10,7 @@ use function Amp\delay;
 use function Amp\File\openFile;
 use function Amp\File\deleteFile;
 
-final class AsyncFileMutex implements Mutex
+final class FileMutex implements Mutex
 {
     private const LATENCY_TIMEOUT = 10;
 
